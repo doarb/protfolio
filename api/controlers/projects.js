@@ -21,6 +21,7 @@ const getProject = async (req, res) => {
 const createProject = async (req, res) => {
   try {
     console.log(req.body);
+    
     let project = {
       thumbnail: req.body.thumbnail,
       title: req.body.title,
