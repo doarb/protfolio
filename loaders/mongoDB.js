@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const URIserver = process.env.DATABASEURI;
 
 let isConnected = false;
@@ -8,7 +8,7 @@ async function connectToDatabase() {
   try {
     if (!isConnected) {
       await mongoose.connect(URIserver);
-      console.log('Connected');
+      console.log("Connected");
       isConnected = true;
     }
   } catch (error) {
@@ -21,7 +21,7 @@ async function disconnectToDatabase() {
   try {
     if (isConnected) {
       mongoose.disconnect();
-      console.log('Disconnected');
+      console.log("Disconnected");
       isConnected = false;
     }
   } catch (error) {
