@@ -3,14 +3,10 @@ const helmet = require("helmet");
 const app = express();
 const mongoDB = require("./loaders/mongoDB");
 
-const testRouter = require("./routes/example");
+const testRouter = require("./api/routes/routes");
 app.use(express.json());
 app.use(helmet());
 
-// Connect to the database
-mongoDB.connectToDatabase();
-mongoDB.connectionStatus();
-mongoDB.disconnectToDatabase();
 
 app.use("/api",testRouter);
 
@@ -20,7 +16,13 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port : ${PORT}`);
+
+mongoDB.connectToDatabase().then(() => { 
+  app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
+  });
+}).catch((error) => {
+  console.log(error);
 });
+
 
