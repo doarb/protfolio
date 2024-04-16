@@ -2,10 +2,11 @@ const express = require("express");
 const helmet = require("helmet");
 const app = express();
 const mongoDB = require("./loaders/mongoDB");
-
+const cors = require("cors");
 const testRouter = require("./api/routes/routes");
 app.use(express.json());
 app.use(helmet());
+app.use(cors());
 
 
 app.use("/api",testRouter);
