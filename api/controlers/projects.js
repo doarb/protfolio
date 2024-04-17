@@ -3,7 +3,7 @@ const projectService = require("../services/projects");
 const getAllProjects = async (req, res) => {
   try {
     let projects = await projectService.getAllProjects();
-    return res.status(200).json({ message: projects });
+    return res.status(200).json({ projects });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -12,7 +12,7 @@ const getAllProjects = async (req, res) => {
 const getProject = async (req, res) => {
   try {
     let project = await projectService.getProject(req.params.id);
-    return res.status(200).json({ message: project });
+    return res.status(200).json({ project });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -33,7 +33,7 @@ const createProject = async (req, res) => {
     console.log(project);
 
     let projects = await projectService.createProject(project);
-    return res.status(200).json({ message: projects });
+    return res.status(200).json({ projects });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -51,7 +51,7 @@ const putProject = async (req, res) => {
       illutrations: req.body.illutrations,
     };
     let projects = await projectService.putProject(project);
-    return res.status(200).json({ message: projects });
+    return res.status(200).json({ projects });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -60,7 +60,7 @@ const putProject = async (req, res) => {
 const deleteProject = async (req, res) => {
   try {
     let projects = await projectService.deleteProject(req.params.id);
-    return res.status(200).json({ message: projects });
+    return res.status(200).json({ projects });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }

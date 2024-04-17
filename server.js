@@ -1,12 +1,15 @@
 const express = require("express");
 const helmet = require("helmet");
-const app = express();
-const mongoDB = require("./loaders/mongoDB");
 const cors = require("cors");
-const testRouter = require("./api/routes/routes");
+
+const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+
+const mongoDB = require("./loaders/mongoDB");
+const testRouter = require("./api/routes/routes");
+
 
 
 app.use("/api",testRouter);

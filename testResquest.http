@@ -97,3 +97,19 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:5000/api/projects/2
+
+###
+GET http://localhost:5000/api/analysis/
+
+###
+GET http://localhost:5000/api/analysis/1
+
+###
+POST http://localhost:5000/api/analysis/
+Content-Type: application/json
+
+{
+    "type": "Project",
+    "description": "This is project 1",
+    "date": "01/01/2021"
+}
