@@ -113,3 +113,20 @@ Content-Type: application/json
     "description": "This is project 1",
     "date": "01/01/2021"
 }
+
+###
+POST http://localhost:5000/api/presentation/
+Content-Type: application/json
+
+{
+    "Nom": "Project 1",
+    "Prenom": "This is project 1",
+    "email": "test@test.fr",
+    "Naissance": "01/01/2021",
+    "listCompetence": [
+        "React",
+        "Node",
+        "MongoDB"
+    ],
+    "description": "This is project 1"
+}

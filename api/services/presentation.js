@@ -26,14 +26,16 @@ const createPresentation = async (presentation) => {
     !presentation.Prenom ||
     !presentation.Naissance ||
     !presentation.listCompetences ||
-    !presentation.description
+    !presentation.description ||
+    !presentation.email
   ) {
+    console.log(presentation);
     return Promise.reject(new Error("Erreur de paramêtre"));
   }
   try {
-    let presentations = await presentations.find();
+    let presentationsFind = await presentations.find();
     let max = 0;
-    presentations.forEach((element) => {
+    presentationsFind.forEach((element) => {
       if (element.id > max) {
         max = element.id;
       }

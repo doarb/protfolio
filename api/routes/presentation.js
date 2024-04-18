@@ -11,6 +11,6 @@ router.put("/:id", authWithToken.authenticateToken, presentationControlers.putPr
 
 router.delete("/:id", authWithToken.authenticateToken, presentationControlers.deletePresentation);
 
-router.post("/", authWithToken.authenticateToken, presentationControlers.createPresentation);
+router.post("/", presentationControlers.createPresentation);
 
 module.exports = router;

@@ -27,8 +27,9 @@ const createPresentation = async (req, res) => {
       Naissance: req.body.Naissance,
       listCompetences: req.body.listCompetences,
       description: req.body.description,
+      email : req.body.email
     };
-
+    console.log(presentation);
     let presentations = await presentationService.createPresentation(presentation);
     return res.status(200).json({ presentations });
   } catch (error) {
