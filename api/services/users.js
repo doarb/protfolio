@@ -2,7 +2,13 @@ const User = require("../../models/users");
 const bcrypt = require("bcrypt");
 
 const getAllUser = async () => {
-  return User.find();
+  return User.find()
+    .then((users) => {
+      return users.map((user) => user.element);
+    })
+    .catch((error) => {
+      return Promise.reject(new Error("Error getting users" + error.message));
+    });
 };
 
 const getUser = async (id) => {
@@ -21,7 +27,7 @@ const getUser = async (id) => {
 const getUserByEmail = async (email) => {
   return User.findOne({ email: email }).then((user) => {
     if (!user) {
-      return Promise.reject(new Error("User not found"));
+      return undefined;
     }
     return user;
   });

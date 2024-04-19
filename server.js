@@ -1,6 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const setupBase = require("./setupBase");
 
 const app = express();
 app.use(cors());
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 
 
 mongoDB.connectToDatabase().then(() => { 
+  setupBase.setupBase();
   app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);
   });
