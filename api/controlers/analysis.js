@@ -12,9 +12,9 @@ const getAnalysis = async (req, res) => {
 const getSearchedAnalysis = async (req, res) => {
   try {
     let Analysis = await analysisService.getSearchedAnalysis(
-      req.query.type,
-      req.query.dateDeDebut,
-      req.query.dateDeFin
+      req.body.type,
+      req.body.dateDeDebut,
+      req.body.dateDeFin
     );
     return res.status(200).json({ message: Analysis });
   } catch (error) {

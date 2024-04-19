@@ -3,7 +3,7 @@ const router = express.Router();
 const analysisControlers = require("../controlers/analysis");
 const authWithToken = require("../../middlewares/authwithtoken");
 
-router.get("/", authWithToken.authenticateToken, analysisControlers.getSearchedAnalysis);
+router.post("/search", authWithToken.authenticateToken, analysisControlers.getSearchedAnalysis);
 
 router.get("/:id", authWithToken.authenticateToken, analysisControlers.getAnalysis);
 
