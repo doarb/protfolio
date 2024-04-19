@@ -7,10 +7,10 @@ router.get("/",projectsControlers.getAllProjects);
 
 router.get("/:id",projectsControlers.getProject);
 
-router.put("/:id",authWithToken.authenticateToken,projectsControlers.putProject);
+router.put("/:id",projectsControlers.putProject);
 
-router.delete("/:id",authWithToken.authenticateToken,projectsControlers.deleteProject);
+router.delete("/:id",projectsControlers.deleteProject);
 
-router.post("/",authWithToken.authenticateToken,projectsControlers.createProject);
+router.post("/",projectsControlers.createProject);
 
 module.exports = router;

@@ -24,7 +24,7 @@ const createProject = async (project) => {
     !project.descriptionIntro ||
     !project.descriptionMain ||
     !project.listWord ||
-    !project.illutrations
+    !project.illustrations
   ) {
     return Promise.reject(new Error("Erreur de paramêtre"));
   }
@@ -44,6 +44,7 @@ const createProject = async (project) => {
 };
 
 const putProject = async (project) => {
+  console.log(project);
   return Project.updateOne({ id: project.id }, project);
 };
 

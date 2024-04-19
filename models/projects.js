@@ -7,9 +7,9 @@ let ProjectSchema = new mongoose.Schema({
   descriptionIntro: { type: String, required: true, length: 80},
   descriptionMain: { type: String, required: true, length: 250},
   listWord: { type: Array, required: true, length: 10},
-  illutrations: { type: [String], required: true, length: 6},
+  illustrations: { type: [String], required: true, length: 6},
   link: { type: String},
-  date: { type: Date, require: true}
+  date: { type: String}
 });
 
 ProjectSchema.virtual("element").get(function () {
@@ -20,7 +20,7 @@ ProjectSchema.virtual("element").get(function () {
     descriptionIntro: this.descriptionIntro,
     descriptionMain: this.descriptionMain,
     listWord: this.listWork,
-    illutrations: this.illutrations,
+    illustrations: this.illutrations,
     link: this.link,
     date: this.date
   };

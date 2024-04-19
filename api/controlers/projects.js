@@ -48,7 +48,7 @@ const putProject = async (req, res) => {
       descriptionIntro: req.body.descriptionIntro,
       descriptionMain: req.body.descriptionMain,
       listWord: req.body.listWord,
-      illutrations: req.body.illutrations,
+      illustrations: req.body.illustrations,
     };
     let projects = await projectService.putProject(project);
     return res.status(200).json({ projects });
