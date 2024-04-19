@@ -28,7 +28,7 @@ const createProject = async (req, res) => {
       descriptionIntro: req.body.descriptionIntro,
       descriptionMain: req.body.descriptionMain,
       listWord: req.body.listWord,
-      illutrations: req.body.illutrations,
+      illustrations: req.body.illustrations,
     };
     console.log(project);
 
