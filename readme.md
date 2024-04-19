@@ -19,7 +19,8 @@ Le but de ce projet est de fournir un backend pour un portfolio. Il possède dif
      REFRESH_TOKEN_SECRET="votre-refresh-token"
      ```
      Il est important de noter que lors du lancement, un premier utilisateur sera créé avec les informations User_Admin qui doivent être un email et le PASSWORD_ADMIN qui permettront la connexion aux routes protégées car le mot de passe est chiffré.
-5. Lancer le serveur : `pnpm start`
+5. Pour utiliser la base de données MongoDB, il est recommandé de créer une base de données nommée Portfolio et d'indiquer son URL dans la variable d'environnement DATABASEURI.
+6. Lancer le serveur : `pnpm start`
 
 ## Utilisation
 
