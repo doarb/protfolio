@@ -4,7 +4,7 @@ Le but de ce projet est de fournir un backend pour un portfolio. Il possède dif
 
 ## Installation
 
-1. Cloner le dépôt : `git clone git@github.com:doarb/protfolio-backend.git`
+1. Cloner le dépôt : `git clone git@github.com:doarb/portfolio-backend.git`
 2. Aller dans le dossier du projet : `cd portfolio-backend`
 3. Effectuer les installations : `pnpm install`
 4. Configurer les variables d'environnement :
